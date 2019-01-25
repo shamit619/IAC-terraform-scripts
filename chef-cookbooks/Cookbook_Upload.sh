@@ -3,7 +3,7 @@
 cookbook_name=$1
 cd /mnt/recovery/root/chef-cookbooks
 rm -rf IAC_Cookbooks
-#git clone https://github.com/shamit619/IAC_Cookbooks.git
+git clone https://github.com/shamit619/IAC_Cookbooks.git
 if [[ "$cookbook_name" == "jenkins-demo" ]];
 then
 echo "hi"
