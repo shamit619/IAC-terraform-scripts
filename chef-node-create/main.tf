@@ -41,6 +41,9 @@ resource "aws_instance" "chef" {
 
 resource "aws_security_group" "instance" {
   name = "chef-security-node"
+  lifecycle {
+    create_before_destroy = true
+  }
 
   # Inbound HTTP from anywhere
   ingress {
