@@ -9,3 +9,7 @@ variable "node-count" {
 variable "node-name" {
   description = "What do you want to deploy"
 }
+
+variable "node-reattempt" {
+  description = "Attempt to create new node"
+}
