@@ -40,7 +40,6 @@ resource "aws_instance" "chef" {
 }
 
 resource "aws_security_group" "instance" {
-  count = "${var.node-reattempt == "y" ? 1 : 0}"
   name = "chef-security-node"
   ingress {
     from_port = 80
