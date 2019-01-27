@@ -32,7 +32,7 @@ resource "aws_instance" "chef" {
   }
 
   lifecycle {
-    ignore_changes = ["user_data"]
+    ignore_changes = ["user_data", "tags"]
   } 
   key_name = "terraform-cheff"
 
