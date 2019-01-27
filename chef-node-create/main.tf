@@ -40,7 +40,7 @@ resource "aws_instance" "chef" {
 }
 
 resource "aws_security_group" "instance" {
-  count = "${var.node-reattempt ? 1 : 0}"
+  count = "${var.node-reattempt == "y" ? 1 : 0}"
   name = "chef-security-node"
 
   # Inbound HTTP from anywhere
