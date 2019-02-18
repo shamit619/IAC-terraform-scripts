@@ -22,7 +22,7 @@ resource "aws_instance" "chef" {
               #!/bin/bash
               sudo apt-get -y update
               sudo apt-get -y install awscli
-              aws s3 cp s3://shamit619/chef-node.sh --region "ap-south-1" .
+              aws s3 cp s3://akhil510/chef-node.sh --region "us-east-1" .
               chmod 775 chef-node.sh
               ./chef-node.sh ${var.chef-server-ip} ${var.node-name}
               EOF
@@ -34,9 +34,9 @@ resource "aws_instance" "chef" {
   lifecycle {
     ignore_changes = ["user_data", "tags"]
   } 
-  key_name = "terraform-cheff"
+  key_name = "chef-workstation"
 
-  iam_instance_profile = "S3-Admin-Access"
+  iam_instance_profile = "chef-workstation"
 }
 
 resource "aws_security_group" "instance" {
