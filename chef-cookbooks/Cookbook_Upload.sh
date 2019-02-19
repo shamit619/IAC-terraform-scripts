@@ -11,6 +11,13 @@ cd /mnt/recovery/root/chef-cookbooks/IAC_Cookbooks/jenkins-demo-latest/cookbooks
 berks install
 berks upload
 knife cookbook upload --force --cookbook-path /mnt/recovery/root/chef-cookbooks/IAC_Cookbooks/jenkins-demo-latest/cookbooks -a
+elif [[ "$cookbook_name" == "grafana" ]];
+cd 
+berks install
+berks upload
+elif [[ "$cookbook_name" == "influxdb" ]];
+berks install
+berks upload
 else
 knife cookbook upload --force --cookbook-path /mnt/recovery/root/chef-cookbooks/IAC_Cookbooks/$cookbook_name/cookbooks -a
 fi
