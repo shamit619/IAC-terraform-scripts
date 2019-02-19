@@ -5,7 +5,7 @@ server_name=$2
 
 #knife role from file /mnt/recovery/root/chef-add-run-list/roles/chef-client-interval.json
 
-knife node list > /mnt/recovery/root/chef-add-run-list/node_name.txt
+#knife node list > /mnt/recovery/root/chef-add-run-list/node_name.txt
 
 #while read node
 #do
@@ -32,7 +32,7 @@ do
 echo $node
 #knife ssh 'role:chef-client-interval' 'sudo chef-client' -x ubuntu -i ~/.ssh/terraform-cheff.pem -a $public_ip
 knife ssh name:$node 'sudo chef-client' -x ubuntu -i ~/.ssh/chef-workstation.pem
-done < /mnt/recovery/root/chef-add-run-list/node_name.txt
+done < /mnt/recovery/root/chef-add-run-list/server_name.txt
 
 #rm -rf /mnt/recovery/root/chef-add-run-list/node-public-ip.txt
 
@@ -48,5 +48,5 @@ done < /mnt/recovery/root/chef-add-run-list/server_name.txt
 #knife ssh 'role:chef-client-interval' 'sudo chef-client' -x ubuntu -i ~/.ssh/terraform-cheff.pem -a $public_ip
 #done < /mnt/recovery/root/chef-add-run-list/node-public-ip.txt
 
-#rm -rf /mnt/recovery/root/chef-add-run-list/node_name.txt /mnt/recovery/root/chef-add-run-list/server_name.txt /mnt/recovery/root/chef-add-run-list/node-public-ip.txt
+rm -rf /mnt/recovery/root/chef-add-run-list/node_name.txt /mnt/recovery/root/chef-add-run-list/server_name.txt /mnt/recovery/root/chef-add-run-list/node-public-ip.txt
 
