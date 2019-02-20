@@ -14,7 +14,7 @@ knife cookbook upload --force --cookbook-path /mnt/recovery/root/chef-cookbooks/
 elif [[ "$cookbook_name" == "grafana" ]];
 then
 cd /mnt/recovery/root/chef-cookbooks/IAC_Cookbooks/grafana/cookbooks/grafana
-berks install
+#berks install
 berks upload
 elif [[ "$cookbook_name" == "influxdb" ]];
 then
